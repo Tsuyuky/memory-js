@@ -26,8 +26,8 @@ body{
     margin: 5px;
     position: relative;
     transform: scale(1);
-    transform-style: preserve-3d;
-    transition: transform .3s;
+    transform-style: preserve-3d; /* permet l'animation pour montrer qui se retourne */
+    transition: transform .3s; /* vitesse de l'animation*/
 }
 
 .memory-card:active{
@@ -35,6 +35,7 @@ body{
     transition: transform .2s;
 }
 
+/* rotation de la carte pour que le coté caché de la carte s'affiche */
 .memory-card.flip{
     transform: rotateY(180deg);
 }

@@ -32,7 +32,7 @@ a{
 }
 
 .inscription{
-    height: 20vh;
+    height: 25vh;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
@@ -63,4 +63,17 @@ fieldset{
 
 h2{
     text-align: center;
+}
+
+.strength {
+    font-weight: bold;
+}
+.weak {
+    color: red;
+}
+.medium {
+    color: orange;
+}
+.strong {
+    color: green;
 }

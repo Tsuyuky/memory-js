@@ -36,18 +36,31 @@
             id="email"
             name="email"
             placeholder="adresse@mail.com"
+            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
             title="Saississez votre adresse email">
             <br>
             <br>
             <!-- créer un mdp-->
             <label for="mdp">Mot de passe : </label>
             <br>
-            <input type="password"
+            <input type="mdp"
             id="mdp"
             name="mdp"
             title="Saississez un mot de passe">
-            <p><em> Au moins 1 miniscule, 1 majuscule, 1 symbole</em> </p>
+            <div id="mdp-strength" class="strength">Force du mot de passe: </div>
+            <p><em>Au moins 1 chiffre, 1 symbole et 6 caractères</em> </p>
+            <br>
+            <label for="verifmdp">verif mdp : </label>
+            <br>
+            <input type="password-verif"
+            id="verifmdp"
+            name="verifmdp"
+            title="Resaississez un mot de passe">
+            <br>
+            <input type="submit">
+            <input type="reset">
         </form>
     </fieldset>
+    <script src="js/inscription.js"></script>
 </body>
 </html>
