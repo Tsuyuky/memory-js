@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+}
+
+nav{
+    padding: 20px;
+    margin: auto;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    color: rgb(0, 0, 0);
+    
+}
+
+a{
+    outline: none;
+    text-decoration: none;
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+    line-height: 3;
+    color: black;
+    background-color: yellow;
+}
+
+.inscription{
+    height: 20vh;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+img{
+    width: 25vw;
+}
+
+/* dimension et positionnement du bloc conteneur de l'image */
+#arriere {
+	position: absolute;
+    z-index: -1;
+}
+/* l'image occupe toute la place de son bloc conteneur */
+#arriere img {
+	width : 100vw;
+	height: 100vh;
+    object-fit: fill;
+}
+
+fieldset{
+    background-color: rgba(15, 14, 14, 0.733);
+    color: rgb(255, 255, 255);
+}
+
+h2{
+    text-align: center;
+}

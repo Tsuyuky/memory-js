@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/inscription.css">
+</head>
+<nav>
+    <h1>Inscription</h1>
+    <a href="accueil.html">Accueil</a>
+    <a href="inscription.html">Inscription</a>
+    <a href="profil.html">Profil</a>
+    <a href="connecter.html">Connexion</a>
+    <a href="jeu.html">Jouer</a>
+</nav>
+<body>
+    <div id="arriere">
+        <img alt="fond" src="asset/carbot.webp"/>
+    </div>
+    <fieldset class="inscription">
+        
+        <!-- permet d'écrire son nom dans une zone de Texte-->
+        <form action="" method="post">
+            <h2> Inscrivez-vous</h2>
+            <br>
+            <label for="nom"> Nom d'utilisateur : </label>
+            <br>
+            <input type="text" id="nom" name="nom" autofocus required placeholder="nom" pattern="[A-Za-z]{3,}" title="Saississez votre nom">
+            <br>
+            <br>
+            <!-- créer un email-->
+            <label for="email"> Email :</label>
+            <br>
+            <input type="email"
+            id="email"
+            name="email"
+            placeholder="adresse@mail.com"
+            title="Saississez votre adresse email">
+            <br>
+            <br>
+            <!-- créer un mdp-->
+            <label for="mdp">Mot de passe : </label>
+            <br>
+            <input type="password"
+            id="mdp"
+            name="mdp"
+            title="Saississez un mot de passe">
+            <p><em> Au moins 1 miniscule, 1 majuscule, 1 symbole</em> </p>
+        </form>
+    </fieldset>
+</body>
+</html>
