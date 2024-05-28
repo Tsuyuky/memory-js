@@ -7,7 +7,9 @@
 body{
     height: 100vh;
     display: flex;
+    overflow:hidden
 }
+
 
 .memory-game{
     width: 640px;
@@ -25,7 +27,7 @@ body{
     position: relative;
     transform: scale(1);
     transform-style: preserve-3d;
-    transition: transform .5s;
+    transition: transform .3s;
 }
 
 .memory-card:active{
@@ -48,7 +50,7 @@ img{
     padding: 20px;
     position: absolute;
     border-radius: 5px;
-    background: rgba(59, 59, 226, 0.425);
+    background: rgba(180, 44, 26, 0.425);
     backface-visibility: hidden;
 }
 
@@ -56,12 +58,36 @@ img{
     transform: rotateY(180deg);
 }
 
-h1{
+nav{
     padding: 20px;
     margin: auto;
     text-align: center;
     position: absolute;
     left: 0;
     right: 0;
+    color: red;
+    
+}
+
+a{
+    outline: none;
+    text-decoration: none;
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+    line-height: 3;
+    color: black;
+    background-color: yellow;
+}
+
+/* dimension et positionnement du bloc conteneur de l'image */
+#arriere {
+	position: absolute;
     z-index: -1;
+}
+/* l'image occupe toute la place de son bloc conteneur */
+#arriere img {
+	width : 100vw;
+	height: 100vh;
+    object-fit: fill;
 }
