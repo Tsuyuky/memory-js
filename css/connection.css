@@ -33,7 +33,7 @@ a{
 }
 
 #container{
-    height: 28vh;
+    height: 130px;
     margin: auto;
     flex-wrap: wrap;
     justify-content: center;

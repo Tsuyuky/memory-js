@@ -40,12 +40,11 @@ function flipCard(){ // fonction qui permet de savoir si les cartes sont les mê
 }
 
 // La fonction mélanger prend la priorité sur tout le reste avec les parenthèses, quand on lance le site, cette fonction se fera en premier
-function dem(){
-(function melanger (){
+function melanger (){
     cards.forEach(card => {let aleaPos = Math.floor(Math.random()*12);
-        card.style.order = aleaPos; 
+    card.style.order = aleaPos; 
     });
-})()};
+};
 
 // Pour chaque carte, on ajoute la possibilité de cliquer dessus
 cards.forEach(card => card.addEventListener('click', flipCard))
@@ -55,11 +54,16 @@ const resetBoard = () => {
     [premiereCarte, deuxiemeCarte] = [null, null]; // Réinitialise les cartes retournées 
 };
 
+// Mélangez les cartes dès que la page se charge
+window.addEventListener('load', () => {
+    melanger();
+});
+
 document.addEventListener("keydown", (event) => {
     if (event.code === "Space") {
     cards.forEach(card => card.classList.remove('flip'));
     resetBoard();
     cards.forEach(card => card.addEventListener('click', flipCard))
-    dem();
+    melanger();
     }
 });
