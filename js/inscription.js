@@ -42,6 +42,8 @@ const $form = document.getElementById('container');
     
         let existingEmail; // Déclaration de la variable en dehors du switch
     
+
+        
         $inputs.forEach(input => {
             if (input.id === "mail") {
                 existingEmail = users && users.find(u => u.mail === input.value); // Vérifiez si l'e-mail est déjà utilisé

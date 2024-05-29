@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulaire de Contact</title>
+    <link rel="stylesheet" href="css/connection.css">
+</head>
+<nav>
+    <h1>Formulaire</h1>
+    <a href="accueil.html">Accueil</a>
+    <a href="formulaire.html">Inscription</a>
+    <a href="profil.html">Profil</a>
+    <a href="connecter.html">Connexion</a>
+    <a href="jeu.html">Jouer</a>
+</nav>
+<body>
+    <div id="arriere">
+        <img alt="fond" src="asset/carbot.webp"/>
+    </div>
+    
+    <fieldset id="container">
+        <form>
+            <label for="mail">E-Mail :</label>
+            <input type="email" id="mail" name="mail" class="input" />
+            <div class="message erreur" id="erreur-mail"></div>
+            <br>
+            <label for="mdp">Mot de passe :</label>
+            <input type="password" id="mdp" name="mdp" class="input" />
+            <div id="erreur-motdepasse" class="message erreur"></div>
+            <br>
+            <button type="submit" class="btn">Se connecter</button>
+        </form>
+
+        <div class="message succes" id="message-succes"></div>
+        <div class="userlist" id="userlist"></div>
+
+    </fieldset>
+
+    <script src="js/login.js" type="module"></script>
+
+</body>
+
+</html>
