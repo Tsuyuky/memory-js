@@ -2,12 +2,16 @@
 const KEY_USER = 'users'
 
 function saveUser(user) {
-    // Get old users
-    const users = getUsers()
-    // add new One
-    users.push(user)
-    // Save in LS
-    localStorage.setItem(KEY_USER, JSON.stringify(users))
+    const existingUsers = getUsers(); // Récupérez les utilisateurs existants
+    const isDuplicateEmail = existingUsers.some(existingUser => existingUser.mail === user.mail); // Vérifiez si l'e-mail est déjà utilisé
+
+    if (isDuplicateEmail) {
+        throw new Error("Cette adresse e-mail est déjà utilisée.");
+    } else {
+        // Ajoutez le nouvel utilisateur uniquement s'il n'existe pas déjà
+        existingUsers.push(user);
+        localStorage.setItem(KEY_USER, JSON.stringify(existingUsers)); // Enregistrez les utilisateurs mis à jour
+    }
 }
 
 function getUsers() {
@@ -20,4 +24,4 @@ function getUsers() {
     // return JSON.parse(localStorage.getItem(KEY_USER)) || []
 }
 
-export { saveUser }
+export { saveUser, getUsers }
