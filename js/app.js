@@ -53,13 +53,13 @@ cards.forEach(card => card.addEventListener('click', flipCard))
 const resetBoard = () => {
     [siCarteFlip, lockBoard] = [false, false]; // Réinitialise les variables de suivi du jeu
     [premiereCarte, deuxiemeCarte] = [null, null]; // Réinitialise les cartes retournées 
-  };
+};
 
-  document.addEventListener("keydown", (event) => {
+document.addEventListener("keydown", (event) => {
     if (event.code === "Space") {
-      cards.forEach(card => card.classList.remove('flip'));
-      resetBoard();
-      cards.forEach(card => card.addEventListener('click', flipCard))
-      dem();
+    cards.forEach(card => card.classList.remove('flip'));
+    resetBoard();
+    cards.forEach(card => card.addEventListener('click', flipCard))
+    dem();
     }
 });

@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulaire de Contact</title>
     <link rel="stylesheet" href="css/inscription.css">
 </head>
 <nav>
-    <h1>Inscription</h1>
+    <h1>Formulaire</h1>
     <a href="accueil.html">Accueil</a>
     <a href="formulaire.html">Inscription</a>
     <a href="profil.html">Profil</a>
@@ -18,49 +19,37 @@
     <div id="arriere">
         <img alt="fond" src="asset/carbot.webp"/>
     </div>
-    <fieldset class="inscription">
-        
-        <!-- permet d'écrire son nom dans une zone de Texte-->
-        <form action="" method="post">
-            <h2> Inscrivez-vous</h2>
+    
+    <fieldset class="container">
+        <form>
+            <label for="nom">Nom :</label>
+            <input type="text" id="nom" name="nom" class="input" />
+            <div class="message erreur" id="erreur-nom"></div>
             <br>
-            <label for="nom"> Nom d'utilisateur : </label>
+            <label for="mail">Mail :</label>
+            <input type="email" id="mail" name="mail" class="input" />
+            <div class="message erreur" id="erreur-mail"></div>
             <br>
-            <input type="text" id="nom" name="nom" autofocus required placeholder="nom" pattern="[A-Za-z]{3,}" title="Saississez votre nom">
-            <br>
-            <br>
-            <!-- créer un email-->
-            <label for="email"> Email :</label>
-            <br>
-            <input type="email"
-            id="email"
-            name="email"
-            placeholder="adresse@mail.com"
-            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
-            title="Saississez votre adresse email">
-            <br>
-            <br>
-            <!-- créer un mdp-->
-            <label for="mdp">Mot de passe : </label>
-            <br>
-            <input type="mdp"
-            id="mdp"
-            name="mdp"
-            title="Saississez un mot de passe">
+            <label for="mdp">Mot de passe :</label>
+            <input type="password" id="mdp" name="mdp" class="input" />
             <div id="mdp-strength" class="strength">Force du mot de passe: </div>
-            <p><em>Au moins 1 chiffre, 1 symbole et 6 caractères</em> </p>
+            <div id="erreur-motdepasse" class="message erreur"></div>
             <br>
-            <label for="verifmdp">verif mdp : </label>
+            <label for="verifmdp">Verification Mdp :</label>
+            <input type="password" id="verifmdp" name="verifmdp" class="input" />
+            <div id="erreur-verifmdp" class="message erreur"></div>
             <br>
-            <input type="password-verif"
-            id="verifmdp"
-            name="verifmdp"
-            title="Resaississez un mot de passe">
-            <br>
-            <input type="submit">
-            <input type="reset">
+            <button type="submit" class="btn">Enregistrer</button>
+            <button type="reset" class="btn">Annuler</button>
         </form>
+
+        <div class="message succes" id="message-succes"></div>
+        <div class="userlist" id="userlist"></div>
+
     </fieldset>
-    <script src="js/inscription.js"></script>
+
+    <script src="js/inscription.js" type="module"></script>
+
 </body>
+
 </html>
