@@ -8,15 +8,18 @@ let premiereCarte, deuxiemeCarte;
 cards.forEach(card => card.addEventListener('click', flipCard))
 
 function flipCard(){ // fonction qui permet de savoir si les cartes sont les mêmes
-    if (lockBoard) return;
+    if (lockBoard) return;//Permet d'éviter que les joueurs appuient sur d'autres cartes si 2 sont déjà retournées
     if(this === premiereCarte) return; // Si on appuye 2 fois sur la même image, cela ne fait rien.
     this.classList.add('flip'); // rajoute un .flip à a classe de memory-card, cela permet de déclencher ce qui retourne les cartes grâve au css
 
+    /*Si siCarteFlip est faux (c'est-à-dire qu'aucune carte n'a encore été retournée), 
+    on passe à vrai et on stocke la carte cliquée dans premiereCarte.*/
     if(!siCarteFlip){
         //premier clic
         siCarteFlip = true;
         premiereCarte = this;
     } else {
+        //Si siCarteFlip est vrai (une carte a déjà été retournée), on le remet à faux et on stocke cette deuxième carte cliquée dans deuxiemeCarte.
         //deuxieme clic
         siCarteFlip = false;
         deuxiemeCarte = this;

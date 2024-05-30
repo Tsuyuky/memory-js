@@ -10,7 +10,7 @@ body{
     overflow:hidden
 }
 
-
+/* Définit une grille pour les cartes */
 .memory-game{
     width: 640px;
     height: 640px;
@@ -20,6 +20,7 @@ body{
     perspective: 1000px;
 }
 
+/* définit les cartes et leur transition*/
 .memory-card{
     width: calc(25% - 10px);
     height: calc(33.333% - 10px);
