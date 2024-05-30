@@ -27,7 +27,7 @@ body{
     position: relative;
     transform: scale(1);
     transform-style: preserve-3d; /* permet l'animation pour montrer qui se retourne */
-    transition: transform .3s; /* vitesse de l'animation*/
+    transition: transform .2s; /* vitesse de l'animation*/
 }
 
 .memory-card:active{
