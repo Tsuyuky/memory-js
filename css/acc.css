@@ -58,6 +58,13 @@ img{
 }
 
 section{
-    background-color: rgba(0, 0, 0, 0.233);
     color: rgb(255, 255, 255);
+}
+
+.regle ul{
+    background-color: rgba(0, 0, 0, 0.459);
+}
+
+.presentation p{
+    background-color: rgba(0, 0, 0, 0.459);
 }

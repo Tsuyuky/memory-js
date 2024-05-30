@@ -56,13 +56,21 @@ img{
     object-fit: fill;
 }
 
+button {
+    padding: 10px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 fieldset{
     background-color: rgba(15, 14, 14, 0.733);
     color: rgb(255, 255, 255);
-}
-
-h2{
+    align-content: end;
     text-align: center;
+    font-weight: bold;
 }
 
 .strength {
