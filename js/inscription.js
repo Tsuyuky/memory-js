@@ -32,40 +32,57 @@ function getPasswordStrength(mdp) {
 // Target
 const $form = document.getElementById('container');
 
+//On regardes les différents utilisateurs pour voir l'aresse email enregistré
+function userExists(email) {
+    const users = getUsers();// Récupérez les utilisateurs existants
+    return users.some(user => user.mail === email);
+}
+//On regardes les différents utilisateurs pour voir le nom d'enregistré
+function nameExists(nom) {
+    const users = getUsers();
+    return users.some(user => user.nom === nom);
+}
+
     // Parcours
     $form.addEventListener('submit', (event) => {
         event.preventDefault();
+        //Variables de gestion
         const errors = [];
         const user = {};
-        const users = getUsers(); // Récupérez les utilisateurs existants
+        //Sélectionner les inputs
         const $inputs = event.target.querySelectorAll('input');
-    
-        let existingEmail; // Déclaration de la variable en dehors du switch
-    
-
         
         $inputs.forEach(input => {
-            if (input.id === "mail") {
-                existingEmail = users && users.find(u => u.mail === input.value); // Vérifiez si l'e-mail est déjà utilisé
-                if (existingEmail) {
-                    errors.push([input.id, "Cette adresse e-mail est déjà utilisée"]);
-                } else if (!validateEmail(input.value)) {
+            switch (input.id) {
+            case "mail":
+                //Si validateEmail est incorrecte, cela veut dire que l'email n'est pas bien écrit
+                if (!validateEmail(input.value)) {
                     errors.push([input.id, "L'email n'est pas valide"]);
+                    //Si le nom de l'email est déjà utilisé pour un autre compte, on ne peut pas crée de compte
+                } else if (userExists(input.value)) {
+                    errors.push([input.id, "Cet email est déjà utilisé"]);
                 } else {
                     user.mail = input.value;
                 }
-            } else {
-                switch (input.id) {
+                break;
                     // Gestion des autres champs
                     case "mdp":
                         if (!validatePassword(input.value)) errors.push([input.id, "Le mot de passe n'est pas valide"]);
                         else user.mdp = input.value;
                         break;
                     case "nom":
-                        if (!validateNom(input.value)) errors.push([input.id, "Le nom n'est pas valide"]);
-                        else user.nom = input.value;
+                        //Si validateNom est incorrecte, cela veut dire que le nom ne correspond pas au condition
+                        if (!validateNom(input.value)) {
+                            errors.push([input.id, "Le nom n'est pas valide"]);
+                            //Si le nom de le nom est déjà utilisé pour un autre compte, on ne peut pas crée de compte
+                        } else if (nameExists(input.value)) {
+                            errors.push([input.id, "Ce nom est déjà utilisé"]);
+                        } else {
+                            user.nom = input.value;
+                        }
                         break;
                     case "verifmdp":
+                        // Si les mots de passe ne sont pas les mêmes, on ne peut pas crée de compte
                         if (input.value !== user.mdp) errors.push([input.id, "La vérification du mot de passe ne correspond pas"]);
                         else user.verifmdp = input.value;
                         break;
@@ -73,7 +90,7 @@ const $form = document.getElementById('container');
                         break;
                 }
             }
-        });
+        );
     
         // Check Final
         if (errors.length > 0) {

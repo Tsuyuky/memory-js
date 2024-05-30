@@ -4,6 +4,9 @@ let siCarteFlip = false
 let lockBoard = false;
 let premiereCarte, deuxiemeCarte;
 
+// Pour chaque carte, on ajoute la possibilité de cliquer dessus pour exécuter la fonction flipCard
+cards.forEach(card => card.addEventListener('click', flipCard))
+
 function flipCard(){ // fonction qui permet de savoir si les cartes sont les mêmes
     if (lockBoard) return;
     if(this === premiereCarte) return; // Si on appuye 2 fois sur la même image, cela ne fait rien.
@@ -34,7 +37,7 @@ function flipCard(){ // fonction qui permet de savoir si les cartes sont les mê
             deuxiemeCarte.classList.remove('flip');
 
             resetBoard();
-            },2000)
+            },1500)
         }
     }
 }
@@ -46,9 +49,6 @@ function melanger (){
     });
 };
 
-// Pour chaque carte, on ajoute la possibilité de cliquer dessus
-cards.forEach(card => card.addEventListener('click', flipCard))
-
 const resetBoard = () => {
     [siCarteFlip, lockBoard] = [false, false]; // Réinitialise les variables de suivi du jeu
     [premiereCarte, deuxiemeCarte] = [null, null]; // Réinitialise les cartes retournées 
@@ -59,6 +59,7 @@ window.addEventListener('load', () => {
     melanger();
 });
 
+//Recommencer la partie quand on appuie sur Espace
 document.addEventListener("keydown", (event) => {
     if (event.code === "Space") {
     cards.forEach(card => card.classList.remove('flip'));

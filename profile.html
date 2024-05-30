@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil</title> <!-- Titre page onglet navig -->
+  <link rel="stylesheet" href="css/profile.css">
+  <script defer src="js/profile.js"></script>
+  </head>
+<body>
+    <!-- Barre navig -->
+    <nav>
+      <a href="accueil.html">Accueil</a>
+      <a href="formulaire.html">Inscription</a>
+      <a href="profile.html">Profil</a>
+      <a href="connecter.html">Connexion</a>
+      <a href="jeu.html">Jouer</a>
+    </nav>
+    <div id="arriere">
+      <img alt="fond" src="asset/profil.webp"/>
+    </div>
+    <div class="profile-container"> <!-- Conteneur princ profil -->
+      <h1>Mon Profil</h1> <!-- Titre profil -->
+        <div class="profile-info"> <!-- Section des infos profil -->
+        <!-- Conteneur pour l'img de profil -->
+        <div class="profile-image-container">
+          <!-- Étiquette pour le champ de dl d'img -->
+          <label for="profile-image">Image de profil:</label>
+          <!-- Champ de dl pour choisir img de profil -->
+          <input type="file" id="profile-image" accept="image/*">
+            <!-- Preview img de profil avec une img par défaut -->
+            <img id="preview-image" src="asset/AbathurSpray.webp" alt="Profile Img">
+        </div>
+        <!-- Conteneur détails profil -->
+        <div class="profile-details">
+          <!-- Étiquette champ pseudo -->
+          <label for="username">Pseudo:</label>
+          <!-- Champ saisi pseudo avec une valeur par défaut -->
+          <input type="text" id="username" placeholder="Utilisateur">
+          </div>
+      </div>
+      <!-- Bouton de save infos profil -->
+      <button id="save-btn">Sauvegarder</button>
+      </div>
+    
+    </body>
+</html>
+
+
+
